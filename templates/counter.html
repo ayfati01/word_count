@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>this is the counter page</h3>
+<a href="{% url 'home' %}">Go home</a>
+<h2><i>There are {{ content_length }} words in your text.</i></h2>
+<h3>Your text:</h3>
+{{ content }}
+
+<h3><u>your most used words:</u></h3>
+{% for key, val in word_list %}
+  <h2>{{ key }} | {{ val }}</h2>
+{% endfor %}
+{% endblock %}
